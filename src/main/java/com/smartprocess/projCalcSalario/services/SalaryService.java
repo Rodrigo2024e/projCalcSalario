@@ -17,8 +17,8 @@ public class SalaryService {
 	
 	public double netSalary(Employee employee) {
 		
-		return employee.getGlossSalary() - taxService.tax(employee.getGlossSalary()
-				- pensionService.discount(employee.getGlossSalary()));
+		return employee.getGlossSalary() - (pensionService.discount(employee.getGlossSalary()) + taxService.tax(employee.getGlossSalary()));
+				
 	}
 	
 }
